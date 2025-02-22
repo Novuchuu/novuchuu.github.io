@@ -1,0 +1,187 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main container box */
+.container {
+    width: 800px;
+    height: 600px;
+    display: flex;
+    padding: 20px;
+    gap: 20px; /* Space between inner elements */
+}
+
+/* Left side container */
+.left-side {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 200px
+}
+
+/* Small horizontal box on top */
+.top-box {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 75px;
+    background-color: #37393A;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+/* Long vertical box */
+.vertical-box {
+    border-radius: 10px;
+    flex-grow: 1;
+    background-color: #EBEBEB;
+    flex-direction: column;
+    display: flex;
+}
+
+.main-nav {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+
+}
+
+/* Right side big box */
+.right-box {
+    border-radius: 10px;
+    flex-grow: 1;
+    background-color: #FAFAFA;
+    border: 1px solid #666;
+}
+
+.list-title {
+    width: 100%;
+    background-color: #D7D7D7;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    text-indent: .50rem;
+}
+
+.nav-list {
+    list-style-type: none;
+    padding: .25rem;
+    margin: .25rem;
+}
+
+.nav-list li {
+    line-height: 1.25em;
+    margin-bottom: .75rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
+    width: 100%;
+}
+
+.nav-list li:hover {
+    transform: translateX(10px);
+}
+
+.nav-list li a:visited,
+.nav-list li a:active,
+.nav-list li a:link {
+    text-decoration: none;
+    color: inherit; /* keep same as above */
+}
+
+.footer {
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.block {
+    display: block;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.h-full {
+    height: 100%;
+}
+.bg-gray-200 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+
+.px-3 {
+    padding-left: .75rem;
+    padding-right: .75rem;
+}
+
+.py-1 {
+    padding-bottom: .25rem;
+    padding-top: .25rem;
+}
+
+.py-5 {
+    padding-bottom: 1.25rem;
+    padding-top: .25rem;
+}
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.relative {
+    position: relative;
+}
+
+.flex-shrink-0 {
+    flex-shrink: 0;
+}
+
+.flex{
+    display: flex;
+}
+
+.relative {
+    position: relative;
+}
+
+.z-10 {
+    z-index: 10;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+
+
+.no-link-style a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.no-link-style a:visited,
+.no-link-style a:active,
+.no-link-style a:link,
+.no-link-style a:hover {
+    color: inherit;
+}
+
