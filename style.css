@@ -1,3 +1,10 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url("fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+}
+
+
+
 body, html {
     margin: 0;
     padding: 0;
@@ -5,6 +12,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "Montserrat", Arial, sans-serif;
 }
 
 /* Main container box */
@@ -35,6 +43,14 @@ body, html {
     align-items: center;
 }
 
+.top-box-text {
+    color: white;
+    text-decoration: none;
+    font-size: large;
+    font-weight: bold;
+    margin: .5rem;
+}
+
 /* Long vertical box */
 .vertical-box {
     border-radius: 10px;
@@ -42,6 +58,7 @@ body, html {
     background-color: #EBEBEB;
     flex-direction: column;
     display: flex;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
 }
 
 .main-nav {
@@ -57,7 +74,7 @@ body, html {
     border-radius: 10px;
     flex-grow: 1;
     background-color: #FAFAFA;
-    border: 1px solid #666;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
 }
 
 .list-title {
@@ -66,6 +83,7 @@ body, html {
     padding-top: .5rem;
     padding-bottom: .5rem;
     text-indent: .50rem;
+    color: color-mix(in srgb, currentColor 60%, transparent);
 }
 
 .nav-list {
@@ -99,6 +117,8 @@ body, html {
     align-items: flex-end;
     justify-content: center;
     padding-bottom: 10px;
+    font-size: small;
+    color: color-mix(in srgb, currentColor 25%, transparent);
 }
 
 .block {
