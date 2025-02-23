@@ -3,8 +3,6 @@
     src: url("fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
 }
 
-
-
 body, html {
     margin: 0;
     padding: 0;
@@ -76,6 +74,8 @@ body, html {
     flex-grow: 1;
     background-color: #FAFAFA;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 .list-title {
@@ -123,20 +123,8 @@ body, html {
     color: color-mix(in srgb, currentColor 25%, transparent);
 }
 
-.block {
-    display: block;
-}
-
-.w-full {
-    width: 100%;
-}
-
-.h-full {
-    height: 100%;
-}
-.bg-gray-200 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+.text-center {
+    text-align: center;
 }
 
 .px-3 {
@@ -144,17 +132,9 @@ body, html {
     padding-right: .75rem;
 }
 
-.py-1 {
-    padding-bottom: .25rem;
-    padding-top: .25rem;
-}
-
 .py-5 {
     padding-bottom: 1.25rem;
     padding-top: .25rem;
-}
-.overflow-hidden {
-    overflow: hidden;
 }
 
 .flex-col {
@@ -165,45 +145,23 @@ body, html {
     position: relative;
 }
 
-.flex-shrink-0 {
-    flex-shrink: 0;
-}
-
-.flex{
+.flex {
     display: flex;
-}
-
-.relative {
-    position: relative;
-}
-
-.z-10 {
-    z-index: 10;
-}
-
-.justify-center {
-    justify-content: center;
-}
-
-.text-center {
-    text-align: center;
 }
 
 .flex-grow {
     flex-grow: 1;
 }
 
-
-
-.no-link-style a {
-    text-decoration: none;
-    color: inherit;
+.justify-center {
+    justify-content: center;
 }
 
-.no-link-style a:visited,
-.no-link-style a:active,
-.no-link-style a:link,
-.no-link-style a:hover {
-    color: inherit;
+/* Mark Down */
+md-block[rendered] h1, h2{
+    text-align: center;
 }
+md-block[rendered] p {
+}
+
 

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
     <title>Title</title>
 </head>
 <body>
@@ -32,13 +33,9 @@
         </nav>
     </div>
     <div class="right-box">
-        <div class ="relative flex flex-col justify-center flex-grow">
-            <div class="text-center px-3 py-5">
-                <h2> Hiya </h2>
-                <p>this is a Website</p>
-                <p>Intro here</p>
-            </div>
-        </div>
+        <md-block src="content/markdown/index.md">
+            Loading...
+        </md-block>
     </div>
 </div>
 </body>
