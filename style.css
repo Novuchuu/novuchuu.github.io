@@ -19,7 +19,7 @@ body, html {
 /* Main container box */
 .container {
     width: 800px;
-    height: 600px;
+    height: 700px;
     display: flex;
     padding: 20px;
     gap: 20px; /* Space between inner elements */
@@ -84,7 +84,7 @@ body, html {
     padding-top: .5rem;
     padding-bottom: .5rem;
     text-indent: .50rem;
-    color: color-mix(in srgb, currentColor 60%, transparent);
+    color: color-mix(in srgb, currentColor 70%, transparent);
 }
 
 .nav-list {
@@ -94,11 +94,12 @@ body, html {
 }
 
 .nav-list li {
-    line-height: 1.25em;
+    line-height: 1em;
     margin-bottom: .75rem;
     transition: transform 0.3s ease;
     display: inline-block;
     width: 100%;
+    font-weight: 600;
 }
 
 .nav-list li:hover {
