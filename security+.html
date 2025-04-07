@@ -1,0 +1,851 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-04-07 Mon 11:55 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Security+</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Security+</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org8bccfad">1. Threats, Vulnreabilities, and Mitigations</a>
+<ul>
+<li><a href="#org5599114">1.1. Understanding attacks</a>
+<ul>
+<li><a href="#org4631ed0">1.1.1. attacks and Defense stratagys</a></li>
+<li><a href="#org73053ad">1.1.2. attack Surfaces</a></li>
+</ul>
+</li>
+<li><a href="#org623aa3b">1.2. Social Engineering</a>
+<ul>
+<li><a href="#org7671867">1.2.1. Social Engineering Overview</a></li>
+</ul>
+</li>
+<li><a href="#org4a49483">1.3. Malware</a>
+<ul>
+<li><a href="#orge9658a6">1.3.1. Malware</a></li>
+<li><a href="#orgd1cb022">1.3.2. Malware Protection</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgafe6629">2. org-footnote-section</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8bccfad" class="outline-2">
+<h2 id="org8bccfad"><span class="section-number-2">1.</span> Threats, Vulnreabilities, and Mitigations</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org5599114" class="outline-3">
+<h3 id="org5599114"><span class="section-number-3">1.1.</span> Understanding attacks</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-org4631ed0" class="outline-4">
+<h4 id="org4631ed0"><span class="section-number-4">1.1.1.</span> attacks and Defense stratagys</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="border">
+<caption class="t-above"><span class="table-number">Table 1:</span> Attack Stratagies</caption>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Strategy</th>
+<th scope="col" class="org-left">Desc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Reconnasisasance</td>
+<td class="org-left">gathering info an org</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- System Hardware info</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Network configuration</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Individual Information</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Social Engineering</td>
+<td class="org-left">- Intimidation</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Sympathy</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Technical Approch</td>
+<td class="org-left">using software or utils to finde vulnrulbilitys</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Port scan</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Ping Sweep</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- pen of system</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">once breached gain authority</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Breach the system</td>
+<td class="org-left">penetration of system defenses</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Escalate Priviliges</td>
+<td class="org-left">obtain higher privliges so the attacker has</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Aecess to more info</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- has greater control of the system</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Create a backdoor</td>
+<td class="org-left">create a way to exploit the system without being noticed</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Stage Computers</td>
+<td class="org-left">preparing to preform additonal tasks in the attack</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Exploit Vulnrebilites</td>
+<td class="org-left">- Steal information</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Deny services</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Crash systems</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Modify/altr information</td>
+</tr>
+</tbody>
+</table>
+<p>
+<br />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="border">
+<caption class="t-above"><span class="table-number">Table 2:</span> Defense Methodologies</caption>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Method</th>
+<th scope="col" class="org-left">Desc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Layering</td>
+<td class="org-left">layers multiple security stratagys to prevent single point of failure</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Principle of least privilege</td>
+<td class="org-left">users/groups only get the access needed to do there job and nothing more</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Variety</td>
+<td class="org-left">Defensieve layers should contain a variety of methods. IE not the same one twice</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Randomness</td>
+<td class="org-left">constant change of habits and passwords</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Simplicity</td>
+<td class="org-left">Security measures should not be too complex that it makes it difficult and hard to understand</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org73053ad" class="outline-4">
+<h4 id="org73053ad"><span class="section-number-4">1.1.2.</span> attack Surfaces</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="border">
+<caption class="t-above"><span class="table-number">Table 3:</span> Attack surfaces</caption>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Attack vector</th>
+<th scope="col" class="org-left">Desc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Network</td>
+<td class="org-left">- Direct Acess</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Wired network</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Remote &amp; Wireless Network</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Cloud Acess</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Bluetooth network</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Default redentials</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Open service Port</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Lure</td>
+<td class="org-left">- Removeable Device</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Executable File</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Doccument Files</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Image files</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Message</td>
+<td class="org-left">- email</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- SMS</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- IM</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Web &amp; Social media</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Supply chain</td>
+<td class="org-left">- Supplier</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Vendor</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Buisness partner</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-org623aa3b" class="outline-3">
+<h3 id="org623aa3b"><span class="section-number-3">1.2.</span> Social Engineering</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-org7671867" class="outline-4">
+<h4 id="org7671867"><span class="section-number-4">1.2.1.</span> Social Engineering Overview</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<ul class="org-ul">
+<li>Hard to detect</li>
+<li>Hard to track</li>
+<li>Hard to catch</li>
+<li>Educaiton is the ONLY solution</li>
+</ul>
+<p>
+<br />
+</p>
+<ul class="org-ul">
+<li>Techniques
+<ul class="org-ul">
+<li>Moral obligation</li>
+<li>Inate human trust</li>
+<li>Threating</li>
+<li>Offering something for very little in return</li>
+<li>Ignorance</li>
+<li>Authority and fear</li>
+<li>Social proof</li>
+<li>Scarcity</li>
+<li>Likeability</li>
+<li>Urgency</li>
+<li>Common ground and share intrest</li>
+</ul></li>
+</ul>
+<p>
+<br />
+</p>
+<ul class="org-ul">
+<li>Social enginerring Process
+<ol class="org-ol">
+<li>Research</li>
+
+<li>Development</li>
+
+<li>Exploitation</li>
+</ol></li>
+</ul>
+<p>
+<br />
+</p>
+<ul class="org-ul">
+<li>Human Vectors
+<ul class="org-ul">
+<li>Impersonation and pretexting
+<ul class="org-ul">
+<li>Persuasive/consensus/liking</li>
+<li>Corecion/threat/ergency</li>
+</ul></li>
+<li>Phising and Pharming
+<ul class="org-ul">
+<li>Phising</li>
+<li>Vishing</li>
+<li>SMiShing</li>
+<li>pharming</li>
+<li>typosquatting</li>
+<li>business email compramise</li>
+<li>brand Impersonation and Dininformation</li>
+<li>watering hole attack</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org4a49483" class="outline-3">
+<h3 id="org4a49483"><span class="section-number-3">1.3.</span> Malware</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-orge9658a6" class="outline-4">
+<h4 id="orge9658a6"><span class="section-number-4">1.3.1.</span> Malware</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<ul class="org-ul">
+<li>Malware Classification
+<ul class="org-ul">
+<li>Viruses and worms
+<ul class="org-ul">
+<li>can spread without any authorization from the user</li>
+</ul></li>
+<li>Trojan
+<ul class="org-ul">
+<li>concelaed within installer packages for software. Designed to operate secretly</li>
+</ul></li>
+<li>PUPs/PUAs
+<ul class="org-ul">
+<li>bloatware I.E Windows</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<div id="orga4e91cd" class="figure">
+<p><img src="./images/malware_classification.png " alt="malware_classification.png " width="600px" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Malware classification</p>
+</div>
+<ul class="org-ul">
+<li>Computer Viruses
+<ul class="org-ul">
+<li>Non-resident/file infector
+<ul class="org-ul">
+<li>contained in a hest executable and will infect other process images</li>
+</ul></li>
+<li>Memery resident
+<ul class="org-ul">
+<li>creates new process for itself in memory</li>
+</ul></li>
+<li>Boot
+<ul class="org-ul">
+<li>Virus when OS starts like disk boot sector, partiton table, USB media, etc.</li>
+</ul></li>
+<li>Script and macro viruses
+<ul class="org-ul">
+<li>VMalware from local scripting engines</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>
+<br />
+</p>
+<dl class="org-dl">
+<dt>multipartite</dt><dd>viruses with multiple vectors</dd>
+<dt>polymorphic</dt><dd>viruses that can dynamically change or obfuscate their code to evade detection</dd>
+</dl>
+<p>
+<br />
+</p>
+<ul class="org-ul">
+<li>filesless malware
+<ul class="org-ul">
+<li>Does not write its code to disk</li>
+<li>uses lightweight shell code to achieve backdoor mechinism on host</li>
+<li>may use &ldquo;live off the land&rdquo; techniques rather then compiled</li>
+</ul></li>
+
+<li id="advanced presistent threat (APT), advanced volatile threat (AVT), low observable charataristic (LOC)">can describe the general class of modern filess/live off the land malware</li>
+
+<li>Spyware nad Keyloggers
+<ul class="org-ul">
+<li>Adware</li>
+<li>Spyware</li>
+<li>Keylogger</li>
+</ul></li>
+<li>Backdoors and RATS</li>
+<li>Rootkits</li>
+<li>Ransomware, Crypto-Malware, and Logic Bombs</li>
+<li>Cryptojacking Malware</li>
+<li>Logic Bombs</li>
+
+<li>Windows Privliages
+<ul class="org-ul">
+<li>user</li>
+<li>admin</li>
+<li>SYSTEM</li>
+</ul></li>
+
+<li>Execution Rings
+<ul class="org-ul">
+<li>Ring 0: Most privileged level, direct hardware access, reserved for kernel processes</li>
+<li>Ring 1/2: Used by drivers and I/O processes</li>
+<li>Ring 3: Where standard user-mode processes operate</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd1cb022" class="outline-4">
+<h4 id="orgd1cb022"><span class="section-number-4">1.3.2.</span> Malware Protection</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 4:</span> Malware Prevention</caption>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Options</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Patches</td>
+<td class="org-left">- Hardware Firmware Updaties</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Server and Client Operating Systems</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Applications, especially your web browser</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Malware protection software</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Anti-malware</td>
+<td class="org-left">- Anti-malware software</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Keep definition files up to date</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Enable antivirus scanning for email attachments</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Enable antivirus scanning for removable media</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Schedule regular scans</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Browser setteings</td>
+<td class="org-left">- Enable a pop-up blocker</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Enable privacy controls</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Monitor &amp; Manage cookies</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Reguraly clear the cache/history</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Disable or configue auto-complete settings not to store personal info</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Firewall</td>
+<td class="org-left">local firewall</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Training</td>
+<td class="org-left">Educate useres on common saftey tips</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Web Filter</td>
+<td class="org-left">Blocks malicious sites for users</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>Malware Recovery
+<ul class="org-ul">
+<li>Remediate
+<ul class="org-ul">
+<li>Repair infection</li>
+<li>Quarantine the file</li>
+<li>Delete the filea</li>
+</ul></li>
+<li>Reinstall</li>
+<li>Re-image</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgafe6629" class="outline-2">
+<h2 id="orgafe6629"><span class="section-number-2">2.</span> org-footnote-section</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+oueu
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-04-07 Mon 11:55</p>
+</div>
+</body>
+</html>
